@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foodhub – Build Money Habits That Stick</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            primary:   '#2DBF6E',
+            'primary-dark': '#22a35c',
+            navy:      '#0F1F3D',
+            gold:      '#F5A623',
+            surface:   '#F7F9FC',
+            slate:     '#4A5568',
+            mist:      '#8898AA',
+            cloud:     '#E2E8F0',
+            coral:     '#F05A5A',
+            lavender:  '#7C6FF7',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { -webkit-font-smoothing: antialiased; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+    /* Tab underline active state */
+    .tab-btn.active { border-bottom: 3px solid #2DBF6E; color: #0F1F3D; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+  </style>
+</head>
+<body class="font-sans bg-white text-navy overflow-x-hidden">
+
+  <!-- Announcement bar -->
+  <div class="bg-navy text-center py-2 px-4 text-xs font-medium text-white/70">
+    Now available on iOS &amp; Android — <a href="#" class="text-primary font-semibold hover:underline">Download free →</a>
+  </div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-cloud">
+    <nav class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16" aria-label="Main navigation">
+      <div class="flex items-center gap-10">
+        <!-- Logo -->
+        <a href="#" class="flex flex-col leading-none select-none" aria-label="Foodhub home">
+          <span class="font-black text-navy text-xl tracking-tight">FOOD</span>
+          <span class="font-black text-primary text-xl tracking-tight -mt-1">HUB</span>
+        </a>
+        <div class="hidden md:flex items-center gap-7 text-sm font-medium text-slate">
+          <a href="#features"     class="hover:text-navy transition-colors">Features</a>
+          <a href="#how-it-works" class="hover:text-navy transition-colors">How it works</a>
+          <a href="#pricing"      class="hover:text-navy transition-colors">Pricing</a>
+          <a href="#"             class="hover:text-navy transition-colors">Blog</a>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="#" class="text-sm font-medium text-slate hover:text-navy transition-colors hidden sm:inline">Log in</a>
+        <a href="#"
+           class="bg-primary hover:bg-primary-dark text-white text-sm font-bold px-6 py-3 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+           style="box-shadow: 0 4px 14px rgba(45,191,110,0.35);">
+          Open Account
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ─── HERO ─────────────────────────────────────────────── -->
+    <section class="relative overflow-hidden min-h-[560px]" style="background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);">
+
+      <div class="max-w-6xl mx-auto px-6 pt-16 pb-0 flex items-start justify-between gap-8">
+
+        <!-- Left: headline + cta -->
+        <div class="relative z-10 max-w-md pt-6 pb-20">
+          <h1 class="font-black text-white leading-none mb-6" style="font-size: clamp(2.6rem, 6vw, 4.2rem); line-height: 1.0; letter-spacing: -0.02em;">
+            Discover What's<br>New to Eat?
+          </h1>
+          <p class="text-white/75 text-base leading-relaxed mb-8 max-w-sm">
+            Find newly opened restaurants, trending spots and limited time offers near you. Try something new before everyone else does.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#"
+               class="bg-white text-navy text-sm font-bold px-7 py-3.5 rounded-xl transition-all duration-200 hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-600"
+               style="box-shadow: 0 4px 16px rgba(0,0,0,0.18); min-height: 48px; display: inline-flex; align-items: center;">
+              Explore Restaurants
+            </a>
+            <a href="#"
+               class="border-2 border-white/40 text-white hover:border-white text-sm font-bold px-7 py-3.5 rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white"
+               style="min-height: 48px; display: inline-flex; align-items: center;">
+              See Today's Deals
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: phone mockup -->
+        <!-- TODO: replace placeholder with real app screenshot -->
+        <div class="hidden md:flex flex-col items-center gap-4 pt-8 relative flex-shrink-0" style="width: 420px;">
+          <!-- Main phone card -->
+          <div class="bg-white rounded-3xl overflow-hidden w-56 relative" style="box-shadow: 0 24px 60px rgba(0,0,0,0.25);">
+            <div class="px-5 pt-5 pb-4" style="background: linear-gradient(135deg, #2DBF6E 0%, #22a35c 100%);">
+              <div class="text-xs text-white/70 font-medium mb-1">March 2026</div>
+              <div class="text-2xl font-extrabold text-white">$1,240.00</div>
+              <div class="text-xs text-white/60 mt-0.5">Total spent this month</div>
+              <div class="mt-3 bg-white/25 rounded-full h-1.5">
+                <div class="rounded-full h-1.5 bg-white" style="width: 82%;"></div>
+              </div>
+              <div class="flex justify-between mt-1">
+                <span class="text-xs text-white/55">Budget: $1,500</span>
+                <span class="text-xs font-bold text-white">82%</span>
+              </div>
+            </div>
+            <div class="px-4 py-3 space-y-2.5">
+              <div class="flex items-center gap-2.5">
+                <span class="text-base">🍕</span>
+                <div class="flex-1 min-w-0"><div class="text-xs font-semibold text-navy">Lunch</div><div class="text-xs text-mist">Food</div></div>
+                <span class="text-xs font-bold text-coral">$14.50</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <span class="text-base">🚗</span>
+                <div class="flex-1 min-w-0"><div class="text-xs font-semibold text-navy">Uber</div><div class="text-xs text-mist">Transport</div></div>
+                <span class="text-xs font-bold text-coral">$9.20</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <span class="text-base">🛒</span>
+                <div class="flex-1 min-w-0"><div class="text-xs font-semibold text-navy">Groceries</div><div class="text-xs text-mist">Groceries</div></div>
+                <span class="text-xs font-bold text-coral">$67.30</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <span class="text-base">📱</span>
+                <div class="flex-1 min-w-0"><div class="text-xs font-semibold text-navy">Netflix</div><div class="text-xs text-mist">Subscriptions</div></div>
+                <span class="text-xs font-bold text-coral">$15.99</span>
+              </div>
+            </div>
+          </div>
+          <!-- Streak badge floating top-right -->
+          <div class="absolute top-4 right-0 bg-white rounded-2xl px-4 py-3" style="box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
+            <div class="flex items-center gap-2">
+              <span class="text-xl">🔥</span>
+              <div>
+                <div class="text-xs font-bold text-navy">14-day streak</div>
+                <div class="text-xs text-mist">Pack lunch</div>
+              </div>
+            </div>
+          </div>
+          <!-- Saved badge -->
+          <div class="absolute bottom-10 right-0 bg-white rounded-2xl px-4 py-3" style="box-shadow: 0 4px 16px rgba(0,0,0,0.12);">
+            <div class="text-xs text-mist mb-0.5">Saved this week</div>
+            <div class="text-base font-extrabold text-primary">+$47.00</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── STATS BAR ─────────────────────────────────────────── -->
+    <section class="bg-white border-b border-cloud">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-cloud">
+          <div class="py-6 px-4 text-center">
+            <div class="text-2xl font-extrabold text-navy">500+</div>
+            <div class="text-xs text-mist mt-1">New restaurants added</div>
+          </div>
+          <div class="py-6 px-4 text-center">
+            <div class="text-2xl font-extrabold text-navy">1,200+</div>
+            <div class="text-xs text-mist mt-1">Active food deals</div>
+          </div>
+          <div class="py-6 px-4 text-center">
+            <div class="text-2xl font-extrabold text-navy">25+</div>
+            <div class="text-xs text-mist mt-1">Cities, growing every week</div>
+          </div>
+          <div class="py-6 px-4 text-center">
+            <div class="text-2xl font-extrabold text-navy">4.8★</div>
+            <div class="text-xs text-mist mt-1">Community rating</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FILTER SLIDERS ──────────────────────────────────────── -->
+    <section class="py-16 bg-surface border-b border-cloud">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-10">
+          <span class="text-xs font-bold uppercase tracking-widest" style="color: #22C55E;">Find Your Match</span>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-navy mt-3">Tune your search</h2>
+        </div>
+
+        <div class="max-w-2xl mx-auto bg-white rounded-3xl p-8 border border-cloud" style="box-shadow: 0 8px 32px rgba(0,0,0,0.07);">
+
+          <!-- Slider 1: Distance -->
+          <div class="mb-2">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <div class="text-sm font-bold text-navy">Distance <span class="text-xs font-normal text-mist ml-1">(optional)</span></div>
+                <div class="text-xs text-mist mt-0.5">How far are you willing to go?</div>
+              </div>
+              <div class="text-sm font-bold" style="color: #22C55E;" id="distance-value">5 km</div>
+            </div>
+            <div class="snappy-slider relative h-5 flex items-center cursor-pointer select-none" id="distance-slider">
+              <div class="w-full h-1.5 rounded-full pointer-events-none" style="background: #E5E7EB;">
+                <div class="slider-track-fill h-full rounded-full transition-none" style="background: #22C55E; width: 21.1%;"></div>
+              </div>
+              <div class="slider-thumb absolute w-5 h-5 rounded-full bg-white pointer-events-none" style="border: 2.5px solid #22C55E; left: 21.1%; transform: translateX(-50%); box-shadow: 0 2px 10px rgba(34,197,94,0.3);"></div>
+            </div>
+            <div class="flex justify-between text-xs text-mist mt-2">
+              <span>1 km</span><span>20 km</span>
+            </div>
+            <div class="text-xs text-mist mt-1.5">Showing restaurants within your preferred distance</div>
+          </div>
+
+          <div class="border-t border-cloud my-6"></div>
+
+          <!-- Slider 2: Price Range -->
+          <div class="mb-2">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <div class="text-sm font-bold text-navy">Price Range</div>
+                <div class="text-xs text-mist mt-0.5">Find places that match your budget</div>
+              </div>
+              <div class="text-sm font-bold" style="color: #22C55E;" id="price-value">$$</div>
+            </div>
+            <div class="snappy-slider relative h-5 flex items-center cursor-pointer select-none" id="price-slider">
+              <div class="w-full h-1.5 rounded-full pointer-events-none" style="background: #E5E7EB;">
+                <div class="slider-track-fill h-full rounded-full transition-none" style="background: #22C55E; width: 33.3%;"></div>
+              </div>
+              <!-- Snap markers -->
+              <div class="absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-white pointer-events-none" style="left: 0%; border: 2px solid #D1FAE5;"></div>
+              <div class="absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-white pointer-events-none" style="left: 33.3%; border: 2px solid #D1FAE5;"></div>
+              <div class="absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-white pointer-events-none" style="left: 66.6%; border: 2px solid #D1FAE5;"></div>
+              <div class="absolute top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-white pointer-events-none" style="left: 100%; border: 2px solid #D1FAE5;"></div>
+              <div class="slider-thumb absolute w-5 h-5 rounded-full bg-white pointer-events-none" style="border: 2.5px solid #22C55E; left: 33.3%; transform: translateX(-50%); box-shadow: 0 2px 10px rgba(34,197,94,0.3); z-index: 10;"></div>
+            </div>
+            <div class="flex justify-between text-xs text-mist mt-2">
+              <span>$</span><span>$$</span><span>$$$</span><span>$$$$</span>
+            </div>
+            <div class="text-xs text-mist mt-1.5">From quick bites to premium dining</div>
+          </div>
+
+          <div class="border-t border-cloud my-6"></div>
+
+          <!-- Slider 3: Deal Strength -->
+          <div class="mb-2">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <div class="text-sm font-bold text-navy">Deal Strength</div>
+                <div class="text-xs text-mist mt-0.5">Only show restaurants with good offers</div>
+              </div>
+              <div class="text-sm font-bold" style="color: #22C55E;" id="deal-value">20% off</div>
+            </div>
+            <div class="snappy-slider relative h-5 flex items-center cursor-pointer select-none" id="deal-slider">
+              <div class="w-full h-1.5 rounded-full pointer-events-none" style="background: #E5E7EB;">
+                <div class="slider-track-fill h-full rounded-full transition-none" style="background: #22C55E; width: 40%;"></div>
+              </div>
+              <div class="slider-thumb absolute w-5 h-5 rounded-full bg-white pointer-events-none" style="border: 2.5px solid #22C55E; left: 40%; transform: translateX(-50%); box-shadow: 0 2px 10px rgba(34,197,94,0.3);"></div>
+            </div>
+            <div class="flex justify-between text-xs text-mist mt-2">
+              <span>0%</span><span>50%</span>
+            </div>
+            <div class="text-xs text-mist mt-1.5">Discover restaurants with active discounts</div>
+          </div>
+
+          <!-- Live count -->
+          <div class="mt-8 pt-6 border-t border-cloud text-center">
+            <p class="text-sm text-slate">
+              Showing <strong class="text-navy" id="restaurant-count">128</strong> restaurants near you
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FEATURE 1: Replace the old way ───────────────────── -->
+    <section id="features" class="py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row items-center gap-16">
+
+          <!-- Right: copy -->
+          <div class="max-w-lg">
+            <span class="text-xs font-bold uppercase tracking-widest text-primary">Discover</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-navy mt-3 mb-5 leading-tight">It's time to stop guessing where to eat.</h2>
+            <p class="text-slate text-lg leading-relaxed mb-8">Foodhub helps you discover newly opened restaurants and the best food deals happening near you. Explore new spots, grab limited offers and find your next favorite place.</p>
+            <div class="flex flex-col gap-3">
+              <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-navy hover:text-primary transition-colors">Explore Restaurants →</a>
+              <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-navy hover:text-primary transition-colors">Discover Deals →</a>
+              <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-navy hover:text-primary transition-colors">See What's New →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SPLIT SECTION ────────────────────────────────────── -->
+    <section class="flex flex-col md:flex-row min-h-[340px]">
+      <!-- Left: green -->
+      <div class="flex-1 px-10 py-16 flex flex-col justify-center" style="background-color: #22C55E;">
+        <span class="text-xs font-bold uppercase tracking-widest text-white/70 mb-4">New Spots</span>
+        <h2 class="text-3xl font-extrabold text-white leading-tight mb-4">Introducing<br>FoodHub Discoveries.</h2>
+        <p class="text-white/80 text-sm leading-relaxed mb-8 max-w-xs">Find newly opened restaurants, trending dishes, and limited-time offers near you. FoodHub makes it easy to explore what's new in your city.</p>
+        <a href="#"
+           class="inline-flex items-center gap-2 text-sm font-bold px-5 py-3 rounded-xl transition-all w-fit bg-white hover:bg-white/90"
+           style="color: #22C55E; border: 2px solid #22C55E; min-height: 44px;">
+          See What's New
+        </a>
+      </div>
+    </section>
+
+    <!-- ─── TABS SECTION ─────────────────────────────────────── -->
+    <section class="py-24 bg-surface">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row items-start gap-16">
+
+          <!-- Left: copy -->
+          <div class="max-w-xs flex-shrink-0">
+            <h2 class="text-3xl font-extrabold text-navy leading-tight mb-4">Discover what's new to eat in your city.</h2>
+            <!-- Tabs nav -->
+            <div class="flex flex-col gap-0 mt-6 border-l-2 border-cloud">
+              <button onclick="switchTab('new-restaurants')" id="tab-new-restaurants" class="tab-btn text-left px-5 py-3 text-sm font-semibold text-slate hover:text-navy transition-colors" style="border-left: 3px solid transparent; margin-left: -2px;">
+                🍽 New Openings
+              </button>
+              <button onclick="switchTab('trending')" id="tab-trending" class="tab-btn text-left px-5 py-3 text-sm font-semibold text-slate hover:text-navy transition-colors" style="border-left: 3px solid transparent; margin-left: -2px;">
+                🔥 Trending Now
+              </button>
+              <button onclick="switchTab('deals')" id="tab-deals" class="tab-btn text-left px-5 py-3 text-sm font-semibold text-slate hover:text-navy transition-colors" style="border-left: 3px solid transparent; margin-left: -2px;">
+                💸 Best Deals
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: tab panels -->
+          <div class="flex-1">
+
+            <!-- Panel: New Restaurants -->
+            <div id="panel-new-restaurants" class="tab-panel">
+              <div class="bg-white rounded-3xl p-8 border border-cloud" style="box-shadow: 0 8px 32px rgba(0,0,0,0.07);">
+                <h3 class="text-xl font-extrabold text-navy mb-2">Be the first to try new spots.</h3>
+                <p class="text-slate text-sm leading-relaxed mb-6 max-w-sm">Discover newly opened restaurants near you before everyone else does. FoodHub surfaces the freshest openings in your city every week.</p>
+                <a href="#" class="text-sm font-bold transition-colors" style="color: #22C55E;">Explore New Openings →</a>
+                <div class="mt-6 space-y-3">
+                  <div class="flex items-center gap-4 bg-surface rounded-2xl px-4 py-3">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background-color: #DCFCE7;">🍣</div>
+                    <div class="flex-1 min-w-0">
+                      <div class="text-sm font-bold text-navy">Sushi Street</div>
+                      <div class="text-xs text-mist">⭐ 4.7 · Japanese · 0.4 km away</div>
+                    </div>
+                    <span class="text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0" style="background-color: #DCFCE7; color: #16A34A;">New</span>
+                  </div>
+                  <div class="flex items-center gap-4 bg-surface rounded-2xl px-4 py-3">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background-color: #DCFCE7;">🌮</div>
+                    <div class="flex-1 min-w-0">
+                      <div class="text-sm font-bold text-navy">Taco Verde</div>
+                      <div class="text-xs text-mist">⭐ 4.5 · Mexican · 1.2 km away</div>
+                    </div>
+                    <span class="text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0" style="background-color: #DCFCE7; color: #16A34A;">New</span>
+                  </div>
+                  <div class="flex items-center gap-4 bg-surface rounded-2xl px-4 py-3">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background-color: #DCFCE7;">🍝</div>
+                    <div class="flex-1 min-w-0">
+                      <div class="text-sm font-bold text-navy">Pasta Loft</div>
+                      <div class="text-xs text-mist">⭐ 4.6 · Italian · 0.8 km away</div>
+                    </div>
+                    <span class="text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0" style="background-color: #DCFCE7; color: #16A34A;">New</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel: Trending -->
+            <div id="panel-trending" class="tab-panel">
+              <div class="bg-white rounded-3xl p-8 border border-cloud" style="box-shadow: 0 8px 32px rgba(0,0,0,0.07);">
+                <h3 class="text-xl font-extrabold text-navy mb-2">See what everyone's talking about.</h3>
+                <p class="text-slate text-sm leading-relaxed mb-6 max-w-sm">See which restaurants people are loving right now. Explore trending dishes and popular spots in your area before they get fully booked.</p>
+                <a href="#" class="text-sm font-bold transition-colors" style="color: #22C55E;">See Trending Places →</a>
+                <div class="mt-6 space-y-3">
+                  <div class="flex items-center gap-4 bg-surface rounded-2xl px-4 py-3">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background-color: #FEF3C7;">🍔</div>
+                    <div class="flex-1 min-w-0">
+                      <div class="text-sm font-bold text-navy">Burger Theory</div>
+                      <div class="text-xs text-mist">⭐ 4.9 · American · 0.6 km away</div>
+                    </div>
+                    <span class="text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0" style="background-color: #FEF9C3; color: #CA8A04;">🔥 Hot</span>
+                  </div>
+                  <div class="flex items-center gap-4 bg-surface rounded-2xl px-4 py-3">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background-color: #FEF3C7;">🍜</div>
+                    <div class="flex-1 min-w-0">
+                      <div class="text-sm font-bold text-navy">Ramen House</div>
+                      <div class="text-xs text-mist">⭐ 4.8 · Japanese · 1.5 km away</div>
+                    </div>
+                    <span class="text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0" style="background-color: #FEF9C3; color: #CA8A04;">🔥 Hot</span>
+                  </div>
+                  <div class="flex items-center gap-4 bg-surface rounded-2xl px-4 py-3">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background-color: #FEF3C7;">🥗</div>
+                    <div class="flex-1 min-w-0">
+                      <div class="text-sm font-bold text-navy">The Green Bowl</div>
+                      <div class="text-xs text-mist">⭐ 4.7 · Healthy · 0.9 km away</div>
+                    </div>
+                    <span class="text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0" style="background-color: #FEF9C3; color: #CA8A04;">🔥 Hot</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel: Deals -->
+            <div id="panel-deals" class="tab-panel">
+              <div class="bg-white rounded-3xl p-8 border border-cloud" style="box-shadow: 0 8px 32px rgba(0,0,0,0.07);">
+                <h3 class="text-xl font-extrabold text-navy mb-2">Great food, better prices.</h3>
+                <p class="text-slate text-sm leading-relaxed mb-6 max-w-sm">Find restaurants offering discounts and special promotions near you. Grab the best food deals before they expire.</p>
+                <a href="#" class="text-sm font-bold transition-colors" style="color: #22C55E;">See All Deals →</a>
+                <div class="mt-6 space-y-3">
+                  <div class="flex items-center gap-4 bg-surface rounded-2xl px-4 py-3">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background-color: #DCFCE7;">🍕</div>
+                    <div class="flex-1 min-w-0">
+                      <div class="text-sm font-bold text-navy">Pizza District</div>
+                      <div class="text-xs text-mist">⭐ 4.6 · Italian · 0.3 km away</div>
+                    </div>
+                    <span class="text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0" style="background-color: #DCFCE7; color: #16A34A;">30% off</span>
+                  </div>
+                  <div class="flex items-center gap-4 bg-surface rounded-2xl px-4 py-3">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background-color: #DCFCE7;">🍗</div>
+                    <div class="flex-1 min-w-0">
+                      <div class="text-sm font-bold text-navy">Wings & Co.</div>
+                      <div class="text-xs text-mist">⭐ 4.5 · American · 1.1 km away</div>
+                    </div>
+                    <span class="text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0" style="background-color: #DCFCE7; color: #16A34A;">20% off</span>
+                  </div>
+                  <div class="flex items-center gap-4 bg-surface rounded-2xl px-4 py-3">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style="background-color: #DCFCE7;">🧆</div>
+                    <div class="flex-1 min-w-0">
+                      <div class="text-sm font-bold text-navy">Falafel Republic</div>
+                      <div class="text-xs text-mist">⭐ 4.8 · Middle Eastern · 0.7 km away</div>
+                    </div>
+                    <span class="text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0" style="background-color: #DCFCE7; color: #16A34A;">Buy 1 get 1</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── HOW IT WORKS ──────────────────────────────────────── -->
+    <section id="how-it-works" class="py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-4">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-navy">Start discovering great food in minutes.</h2>
+          <p class="text-slate text-sm mt-3">Find new restaurants and exclusive food deals near you in just a few taps.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mt-12">
+
+          <div class="text-center">
+            <div class="w-16 h-16 rounded-2xl mx-auto mb-5 flex items-center justify-center text-3xl" style="background-color: #DCFCE7;">
+              🍽
+            </div>
+            <h3 class="font-bold text-navy text-base mb-2">1. Create your account</h3>
+            <p class="text-slate text-xs leading-relaxed">Sign up in seconds and allow location to see restaurants near you.</p>
+            <div class="hidden md:flex items-center justify-end mt-6">
+              <svg class="w-8 text-cloud" fill="none" viewBox="0 0 32 32" aria-hidden="true"><path d="M8 16h16M18 10l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <div class="w-16 h-16 rounded-2xl mx-auto mb-5 flex items-center justify-center text-3xl" style="background-color: #DCFCE7;">
+              🍜
+            </div>
+            <h3 class="font-bold text-navy text-base mb-2">2. Explore new restaurants</h3>
+            <p class="text-slate text-xs leading-relaxed">Discover newly opened spots, trending places, and hidden gems around you.</p>
+            <div class="hidden md:flex items-center justify-end mt-6">
+              <svg class="w-8 text-cloud" fill="none" viewBox="0 0 32 32" aria-hidden="true"><path d="M8 16h16M18 10l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <div class="w-16 h-16 rounded-2xl mx-auto mb-5 flex items-center justify-center text-3xl" style="background-color: #DCFCE7;">
+              🔥
+            </div>
+            <h3 class="font-bold text-navy text-base mb-2">3. Grab deals &amp; enjoy</h3>
+            <p class="text-slate text-xs leading-relaxed">Find limited-time offers, save your favorite places, and plan your next meal.</p>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="#"
+             class="inline-flex items-center text-sm font-bold px-8 py-4 rounded-xl transition-all duration-200 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2"
+             style="background-color: #22C55E; color: #fff; box-shadow: 0 4px 20px rgba(34,197,94,0.3); min-height: 52px;">
+            Start Exploring →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── TESTIMONIALS ──────────────────────────────────────── -->
+    <section class="py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-14">
+          <span class="text-xs font-bold uppercase tracking-widest" style="color: #22C55E;">What Foodies Say</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-navy mt-3">Loved by food explorers everywhere.</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <div class="bg-surface rounded-2xl p-7 border border-cloud">
+            <div class="flex gap-0.5 mb-4 text-yellow-400" aria-label="5 star rating">★★★★★</div>
+            <p class="text-slate text-sm leading-relaxed mb-6">"I found three amazing new restaurants in my neighbourhood through FoodHub. The deals are great and it's now my go-to app when I want to try something new."</p>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0" style="background-color: #22C55E;" aria-label="Reviewer avatar">PN</div>
+              <div>
+                <div class="text-sm font-bold text-navy">Pooja N.</div>
+                <div class="text-xs text-mist">Waterloo, ON</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-surface rounded-2xl p-7 border border-cloud">
+            <div class="flex gap-0.5 mb-4 text-yellow-400" aria-label="5 star rating">★★★★★</div>
+            <p class="text-slate text-sm leading-relaxed mb-6">"FoodHub helped me discover hidden gems I would have never found on my own. The app makes it super easy to see what's new and trending nearby."</p>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0" style="background-color: #22C55E;" aria-label="Reviewer avatar">SS</div>
+              <div>
+                <div class="text-sm font-bold text-navy">Sushyam Sai</div>
+                <div class="text-xs text-mist">Mississauga, ON</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-surface rounded-2xl p-7 border border-cloud">
+            <div class="flex gap-0.5 mb-4 text-yellow-400" aria-label="5 star rating">★★★★★</div>
+            <p class="text-slate text-sm leading-relaxed mb-6">"Every time I open FoodHub there's something new to explore. From trending spots to exclusive deals, it's the best way to discover great food in your city."</p>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0" style="background-color: #22C55E;" aria-label="Reviewer avatar">AJ</div>
+              <div>
+                <div class="text-sm font-bold text-navy">Aisha J.</div>
+                <div class="text-xs text-mist">Toronto, ON</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+  </main>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────── -->
+  <footer class="pt-16 pb-8 border-t border-cloud bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+
+
+
+      <div class="pt-6 text-xs text-center text-mist">
+        © 2026 Foodhub Ltd. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- SnappySlider vanilla JS -->
+  <script>
+    class SnappySlider {
+      constructor({ el, min, max, step, defaultValue, snapPoints, snapThreshold, format, valueEl, onChange }) {
+        this.el = el;
+        this.min = min;
+        this.max = max;
+        this.step = step || 1;
+        this.value = defaultValue;
+        this.snapPoints = snapPoints || [];
+        this.snapThreshold = snapThreshold || 0;
+        this.format = format || (v => v);
+        this.valueEl = valueEl;
+        this.onChange = onChange || (() => {});
+        this.track = el.querySelector('.slider-track-fill');
+        this.thumb = el.querySelector('.slider-thumb');
+        this._updateUI();
+        this._bind();
+      }
+
+      _pct(v) {
+        return Math.max(0, Math.min(100, ((v - this.min) / (this.max - this.min)) * 100));
+      }
+
+      _updateUI() {
+        const p = this._pct(this.value);
+        this.track.style.width = p + '%';
+        this.thumb.style.left = p + '%';
+        if (this.valueEl) this.valueEl.textContent = this.format(this.value);
+        this.onChange(this.value);
+      }
+
+      _fromX(clientX) {
+        const rect = this.el.getBoundingClientRect();
+        let pct = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+        let raw = pct * (this.max - this.min) + this.min;
+
+        // Snap
+        if (this.snapPoints.length && this.snapThreshold > 0) {
+          const closest = this.snapPoints.reduce((a, b) => Math.abs(b - raw) < Math.abs(a - raw) ? b : a);
+          if (Math.abs(closest - raw) <= this.snapThreshold) raw = closest;
+        }
+
+        raw = Math.round(raw / this.step) * this.step;
+        this.value = Math.max(this.min, Math.min(this.max, raw));
+        this._updateUI();
+      }
+
+      _bind() {
+        const move = (cx) => this._fromX(cx);
+        this.el.addEventListener('mousedown', e => {
+          e.preventDefault();
+          move(e.clientX);
+          const mm = e => move(e.clientX);
+          const mu = () => { document.removeEventListener('mousemove', mm); document.removeEventListener('mouseup', mu); this.thumb.style.cursor = 'grab'; };
+          document.addEventListener('mousemove', mm);
+          document.addEventListener('mouseup', mu);
+          this.thumb.style.cursor = 'grabbing';
+        });
+        this.el.addEventListener('touchstart', e => {
+          e.preventDefault();
+          move(e.touches[0].clientX);
+          const tm = e => move(e.touches[0].clientX);
+          const tu = () => { document.removeEventListener('touchmove', tm); document.removeEventListener('touchend', tu); };
+          document.addEventListener('touchmove', tm, { passive: false });
+          document.addEventListener('touchend', tu);
+        }, { passive: false });
+      }
+    }
+
+    // Restaurant count updater
+    function updateCount(distance, priceIdx, dealPct) {
+      const base = 280;
+      const d = Math.round(base * (distance / 20));
+      const p = Math.round(d * ([0.3, 0.6, 0.85, 1][priceIdx] || 1));
+      const result = Math.max(8, Math.round(p * (1 - dealPct / 100)));
+      document.getElementById('restaurant-count').textContent = result;
+    }
+
+    // State
+    let distVal = 5, priceIdx = 1, dealVal = 20;
+
+    // Slider 1: Distance (1–20 km, default 5)
+    new SnappySlider({
+      el: document.getElementById('distance-slider'),
+      min: 1, max: 20, step: 1,
+      defaultValue: 5,
+      snapPoints: [1, 3, 5, 10, 15, 20],
+      snapThreshold: 0.8,
+      valueEl: document.getElementById('distance-value'),
+      format: v => Math.round(v) + ' km',
+      onChange: v => { distVal = v; updateCount(distVal, priceIdx, dealVal); }
+    });
+
+    // Slider 2: Price Range (snap to 4 levels: $, $$, $$$, $$$$)
+    new SnappySlider({
+      el: document.getElementById('price-slider'),
+      min: 0, max: 3, step: 1,
+      defaultValue: 1,
+      snapPoints: [0, 1, 2, 3],
+      snapThreshold: 0.45,
+      valueEl: document.getElementById('price-value'),
+      format: v => ['$', '$$', '$$$', '$$$$'][Math.round(v)] || '$$',
+      onChange: v => { priceIdx = Math.round(v); updateCount(distVal, priceIdx, dealVal); }
+    });
+
+    // Slider 3: Deal Strength (0–50%, default 20%)
+    new SnappySlider({
+      el: document.getElementById('deal-slider'),
+      min: 0, max: 50, step: 5,
+      defaultValue: 20,
+      snapPoints: [0, 10, 20, 30, 40, 50],
+      snapThreshold: 4,
+      valueEl: document.getElementById('deal-value'),
+      format: v => Math.round(v) + '% off',
+      onChange: v => { dealVal = v; updateCount(distVal, priceIdx, dealVal); }
+    });
+
+    // Init count
+    updateCount(distVal, priceIdx, dealVal);
+  </script>
+
+  <script>
+    function switchTab(name) {
+      ['new-restaurants','trending','deals'].forEach(function(t) {
+        var btn   = document.getElementById('tab-' + t);
+        var panel = document.getElementById('panel-' + t);
+        if (t === name) {
+          btn.style.borderLeft   = '3px solid #22C55E';
+          btn.style.color        = '#0F1F3D';
+          panel.style.display    = 'block';
+        } else {
+          btn.style.borderLeft   = '3px solid transparent';
+          btn.style.color        = '#4A5568';
+          panel.style.display    = 'none';
+        }
+      });
+    }
+    switchTab('new-restaurants');
+  </script>
+
+</body>
+</html>
